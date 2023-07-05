@@ -1,70 +1,106 @@
-# Getting Started with Create React App
+# Reducer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+https://react.dev/reference/react/useReducer
 
-## Available Scripts
+<img src="https://github.com/tinhpv/react-recall/blob/main/nav-routing-system/IMG_8901.jpg" width='630px' />
 
-In the project directory, you can run:
+- As `useState`, this is used to manager application's state
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```javascript
+const INCREMENT = 'increment';
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+const reducer = (state, action) => {
+  if (action.type == INCREMENT) {
+    return {
+      ...state,
+      count: state.count + 1,
+    };
+  }
 
-### `npm test`
+  return state;
+};
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+const [state, dispatch] = useReducer(reducer, { value: 0, time: 0 });
 
-### `npm run build`
+const handleIncrement = () => {
+  dispatch({
+    type: INCREMENT,
+  });
+};
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `(state, action)`: take in a `state` and an `action` return new state
+- whatever to be returned here is new state, return nothing > gonna get `undefined`
+- don't change state directly. (can use _ImmerJs_ library to be able to do so)
+- No async/await, no request, no promises, no outside variables.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Community Convention (_Not_ a requirement)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Action object should be like `{type:payload:}`
+- `type` is a `string`, should declared a constant to avoid type.
+- passing data to update state through `payload` property.
 
-### `npm run eject`
+# Design reducer note
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```javascript
+// our state
+const state = {
+    count: 0,
+    valueToAdd: 10
+}
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+const reducer = (state, action) => {
+    case ADD_VALUE:
+        return {
+            //...state,
+            count: state.count + state.value
+            valueToAdd: 0
+        }
+    ...
+    default: return state
+};
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- should always be `...state` when updating state, in case in future, we add new property to the state, it won't be omitted.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+```javascript
+// our state
+const state = {
+    count: 0,
+    valueToAdd: 10
+}
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+const reducer = (state, action) => {
+    case INCREMENT:
+        return {
+            ...state,
+            // count: state.count + 1
+            count: action.payload
+        }
+    ...
+    default: return state
+};
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
+// IT'S OK
+const handleIncrement = () => {
+    dispatch({
+        type: 'INCREMENT',
+        payload: state.count + 1
+    })
+}
 
-### Code Splitting
+// BUT..... IF SOMEONE DOES..
+const handleIncrement = () => {
+    dispatch({
+        type: 'INCREMENT',
+        payload: state.count + 2
+    })
+}
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Should keep `dispatch` simple. Putting logic in reducer makes more sense!
