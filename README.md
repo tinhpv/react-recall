@@ -6,3 +6,4 @@
 ## Redux
 
 1. [Reducer](https://github.com/tinhpv/react-recall/tree/main/reducer 'Reducer')
+2. [Redux Toolkit](https://github.com/tinhpv/react-recall/blob/main/redux-rtk/README.md 'Reducer')
