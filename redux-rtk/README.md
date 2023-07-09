@@ -1,5 +1,7 @@
 # Redux
 
+<img src='https://github.com/tinhpv/react-recall/blob/main/redux-rtk/IMG_8920.jpg?raw=true' width="800"/>
+
 ## Components
 
 ### Action
