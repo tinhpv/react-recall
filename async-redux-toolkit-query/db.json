@@ -1,0 +1,140 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Aaron"
+    },
+    {
+      "id": 2,
+      "name": "Emily"
+    }
+  ],
+  "albums": [
+    {
+      "id": 100,
+      "title": "Outlaw",
+      "userId": 1
+    },
+    {
+      "id": 101,
+      "title": "Fast car",
+      "userId": 1
+    },
+    {
+      "id": 102,
+      "title": "Calm down",
+      "userId": 2
+    },
+    {
+      "id": 103,
+      "title": "Kill bill",
+      "userId": 2
+    },
+    {
+      "id": 104,
+      "title": "Creeping",
+      "userId": 2
+    },
+    {
+      "userId": 1,
+      "title": "Handcrafted Rubber Fish",
+      "id": 105
+    },
+    {
+      "userId": 2,
+      "title": "Ergonomic Frozen Gloves",
+      "id": 106
+    },
+    {
+      "userId": 1,
+      "title": "Unbranded Plastic Chips",
+      "id": 107
+    },
+    {
+      "userId": 1,
+      "title": "Licensed Bronze Mouse",
+      "id": 108
+    },
+    {
+      "userId": 1,
+      "title": "Modern Granite Sausages",
+      "id": 109
+    },
+    {
+      "userId": 1,
+      "title": "Incredible Bronze Sausages",
+      "id": 110
+    },
+    {
+      "userId": 1,
+      "title": "Licensed Granite Bike",
+      "id": 111
+    },
+    {
+      "userId": 1,
+      "title": "Electronic Steel Pants",
+      "id": 112
+    },
+    {
+      "userId": 2,
+      "title": "Tasty Frozen Cheese",
+      "id": 113
+    },
+    {
+      "userId": 2,
+      "title": "Bespoke Frozen Shoes",
+      "id": 114
+    },
+    {
+      "userId": 1,
+      "title": "Handmade Granite Tuna",
+      "id": 115
+    },
+    {
+      "userId": 2,
+      "title": "Incredible Metal Bike",
+      "id": 116
+    },
+    {
+      "userId": 1,
+      "title": "Intelligent Wooden Chips",
+      "id": 117
+    },
+    {
+      "userId": 2,
+      "title": "Fantastic Wooden Fish",
+      "id": 118
+    },
+    {
+      "userId": 1,
+      "title": "Recycled Cotton Car",
+      "id": 119
+    },
+    {
+      "userId": 1,
+      "title": "Unbranded Granite Table",
+      "id": 120
+    },
+    {
+      "userId": 1,
+      "title": "Elegant Cotton Salad",
+      "id": 121
+    },
+    {
+      "userId": 1,
+      "title": "Ergonomic Fresh Towels",
+      "id": 122
+    },
+    {
+      "userId": 1,
+      "title": "Intelligent Cotton Car",
+      "id": 123
+    },
+    {
+      "userId": 1,
+      "title": "Oriental Rubber Bike",
+      "id": 124
+    }
+  ],
+  "photos": []
+}
