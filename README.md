@@ -7,3 +7,4 @@
 
 1. [Reducer](https://github.com/tinhpv/react-recall/tree/main/reducer 'Reducer')
 2. [Redux Toolkit](https://github.com/tinhpv/react-recall/blob/main/redux-rtk/README.md 'Reducer')
+3. [Typescript Redux](https://github.com/tinhpv/react-recall/tree/main/typescript-redux-functional-comp 'Typescript Redux')
