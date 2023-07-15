@@ -8,7 +8,6 @@ interface AppProps {
   fetchTodos: typeof Function;
   deleteTodo: typeof deleteTODO;
 }
-
 export class _App extends React.Component<AppProps> {
   onFetch = (): void => {
     this.props.fetchTodos();
